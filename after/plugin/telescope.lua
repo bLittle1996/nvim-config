@@ -14,7 +14,7 @@ vim.keymap.set('v', '<leader>fs', function ()
 end)
 
 -- Search for word under curser, filter by file
-vim.keymap.set('n', '<leader>fwc', builtin.grep_string)
+vim.keymap.set('n', '<leader>fcw', builtin.grep_string)
 
 -- Search for word, provide word, filter by file`
 vim.keymap.set('n', '<leader>fw', function () 
