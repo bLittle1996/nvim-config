@@ -5,9 +5,10 @@ vim.g.neoformat_enabled_json = { "prettier" }
 vim.g.neoformat_enabled_css = { "prettier" }
 vim.g.neoformat_enabled_scss = { "prettier" }
 vim.g.neoformat_enabled_go = { "gofmt" }
+vim.g.neoformat_enabled_rust = { "rustfmt" }
 vim.api.nvim_create_autocmd(
     "BufWritePre",
-    { pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.scss", "*.css", "*.json", "*.go" }, command = "Neoformat" }
+    { pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.scss", "*.css", "*.json", "*.go", "*.rs" }, command = "Neoformat" }
 )
 
 
