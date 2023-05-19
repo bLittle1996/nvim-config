@@ -4,9 +4,10 @@ vim.g.neoformat_enabled_typescript = { "prettier" }
 vim.g.neoformat_enabled_json = { "prettier" }
 vim.g.neoformat_enabled_css = { "prettier" }
 vim.g.neoformat_enabled_scss = { "prettier" }
+vim.g.neoformat_enabled_go = { "gofmt" }
 vim.api.nvim_create_autocmd(
     "BufWritePre",
-    { pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.scss", "*.css", "*.json" }, command = "Neoformat" }
+    { pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.scss", "*.css", "*.json", "*.go" }, command = "Neoformat" }
 )
 
 
