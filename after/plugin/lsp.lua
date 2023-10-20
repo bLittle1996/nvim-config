@@ -19,8 +19,21 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-Space>'] = cmp.mapping.complete()
 })
 
+lsp.nvim_workspace()
+lsp.setup_nvim_cmp({ mapping = cmp_mappings })
+lsp.set_preferences({
+    sign_icons = {
+        error = 'E',
+        warning = 'W',
+        info = 'I',
+        hint = 'H',
+    }
+})
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
+
+    -- start with errors being expanded
+    vim.diagnostic.config({ virtual_text = true, underline = true });
     
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
