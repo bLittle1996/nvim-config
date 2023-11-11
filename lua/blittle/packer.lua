@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use('wbthomason/packer.nvim')
 	-- Telescope (Fuzzy Finder)
-	use { 'nvim-telescope/telescope.nvim',  tag = '0.1.1', requires = { 'nvim-lua/plenary.nvim' } }
+	use { 'nvim-telescope/telescope.nvim',  tag = '0.1.4', requires = { 'nvim-lua/plenary.nvim' } }
 	-- Colour Theme
 	use('rebelot/kanagawa.nvim', { as = 'kanagawa' })
 	-- Treesitter
@@ -49,4 +49,5 @@ return require('packer').startup(function(use)
     -- A snazzy status bar oh yeahhhhhhh
     use('vim-airline/vim-airline')
     use('vim-airline/vim-airline-themes')
+
 end)
