@@ -44,7 +44,7 @@ end)
 
 
 -- Working with JS/TS (prettier)
-registerFormatter("prettier", { "*.js", "*.jsx", "*.ts", "*.tsx", "*.css", "*.scss", "*.json" })
+registerFormatter("prettier", { "*.js", "*.jsx", "*.ts", "*.tsx", "*.css", "*.scss", "*.json", "*.cjs", "*.mjs" })
 -- Go
 registerFormatter("gofmt", { "*.go" })
 -- Rust
