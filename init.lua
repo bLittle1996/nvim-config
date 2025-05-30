@@ -1,1 +1,1 @@
-require("blittle")
+require("config.lazy")
