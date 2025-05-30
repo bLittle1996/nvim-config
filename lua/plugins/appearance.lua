@@ -9,6 +9,7 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
+        commit = "0c6cca9f2c63dadeb9225c45bc92bb95a151d4af",
         opts = {
             options = {
                 theme = "auto",
@@ -52,6 +53,7 @@ return {
     {
         "folke/snacks.nvim", 
         lazy = false,
+        tag = "v2.22.0",
         opts = {
             input = { enabled = true },
             scroll = { enabled = true },

@@ -1,9 +1,14 @@
 return {
     -- See repo for keybinds (gc{motion}, gcc)
-    { "tpope/vim-commentary", lazy = true, cmd = { "Commentary" }, event = "BufEnter" },
+    { "tpope/vim-commentary", lazy = true, cmd = { "Commentary" }, event = "VeryLazy" },
     -- See repo for keybinds (cs{cur}{new}, cst<html>, ds{cur}, ys{motion}{new})
     -- cs = change surround, ds = delete surround, ys = you surround
-    { "tpope/vim-surround", lazy = true, event = "BufEnter" },
+    { "tpope/vim-surround", lazy = true, event = "VeryLazy" },
+    {
+        "stevearc/conform.nvim",
+        lazy = true,
+        event = "VeryLazy",
+    },
     -- check the particular tags README.md for which version of neovim treesitter supports
     {
         'folke/snacks.nvim',

@@ -3,13 +3,14 @@ return {
     { 
         "mason-org/mason-lspconfig.nvim", 
         lazy = false, 
+        tag = "v2.0.0",
         config = function (plugin, opts)
             require('mason').setup({}) 
             require('mason-lspconfig').setup({}) 
         end,
         dependencies = {
-            { "mason-org/mason.nvim" },
-            { "neovim/nvim-lspconfig" },
+            { "mason-org/mason.nvim", tag = "v2.0.0" },
+            { "neovim/nvim-lspconfig", tag = "v2.2.0" },
         }
     }
 }

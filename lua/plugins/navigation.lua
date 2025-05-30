@@ -17,6 +17,7 @@ return {
         'nvim-tree/nvim-tree.lua',
         lazy = true,
         event = "VeryLazy",
+        tag = "v1.12.0",
         init = function ()
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1

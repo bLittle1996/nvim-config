@@ -1,5 +1,5 @@
 return {
-    {"mason-org/mason.nvim", lazy = true, cmd = { "Mason" }},
+    {"mason-org/mason.nvim", tag = "v2.0.0", lazy = true, cmd = { "Mason" }},
     {
         "folke/which-key.nvim",
         lazy = true,
