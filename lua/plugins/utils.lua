@@ -1,14 +1,20 @@
 return {
-    {"mason-org/mason.nvim", tag = "v2.0.0", lazy = true, cmd = { "Mason" }},
+    { "mason-org/mason.nvim", tag = "v2.0.0", lazy = true, cmd = { "Mason" } },
     {
         "folke/which-key.nvim",
         lazy = true,
         event = "VeryLazy",
         opts = {
-            triggers = {}
+            triggers = {},
         },
         keys = {
-            { "<leader>?", function () require('which-key').show({global=true}) end, desc = "Show keymaps" }
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = true })
+                end,
+                desc = "Show keymaps",
+            },
         },
     },
     {
@@ -22,6 +28,6 @@ return {
             scroll = { enabled = true },
             statuscolumn = { enabled = true },
             words = { enabled = true },
-        }
-    }
+        },
+    },
 }

@@ -8,33 +8,59 @@ return {
         "stevearc/conform.nvim",
         lazy = true,
         event = "VeryLazy",
+        opts = {
+            default_format_opts = {
+                lsp_format = "fallback",
+            },
+            format_on_save = {
+                lsp_format = "fallback",
+                timeout_ms = 499,
+            },
+            notify_on_error = true,
+            notify_no_formatters = true,
+        },
+        keys = {
+            {
+                "<leader>mm",
+                function()
+                    require("conform").format()
+                end,
+                desc = "Format File. Tasty!",
+            },
+        },
     },
     -- check the particular tags README.md for which version of neovim treesitter supports
     {
-        'folke/snacks.nvim',
+        "folke/snacks.nvim",
         lazy = false,
         opts = {
             picker = { enabled = true },
         },
         keys = {
-            { "<leader>u", function () Snacks.picker.undo() end, desc = "Undo History" },
-        }
+            {
+                "<leader>u",
+                function()
+                    Snacks.picker.undo()
+                end,
+                desc = "Undo History",
+            },
+        },
     },
     -- be careful using main, it always supports the _latest_ stable version of neovim
     -- so it may update on you and break :(
     {
-        'nvim-treesitter/nvim-treesitter',
+        "nvim-treesitter/nvim-treesitter",
         lazy = false,
         tag = "v0.9.3",
         opts = {
             auto_install = true,
             highlight = {
-                enable = true
-            }
+                enable = true,
+            },
         },
-        config = function (plugin, opts)
-            require('nvim-treesitter.configs').setup(opts)
-        end
+        config = function(plugin, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end,
     },
-    { 'nvim-treesitter/nvim-treesitter-context', lazy = false },
+    { "nvim-treesitter/nvim-treesitter-context", lazy = false },
 }
