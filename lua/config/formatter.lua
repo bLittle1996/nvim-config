@@ -9,7 +9,7 @@ local add_formatter = function(ft, opts)
 end
 
 add_formatter("lua", { "stylua" })
-add_formatter("go", { "gopls" })
+add_formatter("go", { "gofmt" })
 
 local js_formatters = { "prettier" }
 local js_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
