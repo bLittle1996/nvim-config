@@ -14,7 +14,6 @@ return {
         lazy = true,
         event = "VeryLazy",
         config = function(plugin, opts)
-            print("setting up nvim cmp")
             local cmp = require("cmp")
             cmp.setup({
                 snippet = {
