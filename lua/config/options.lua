@@ -22,3 +22,5 @@ vim.opt.history = 1000
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 vim.diagnostic.config({ virtual_text = true, underline = true })
+
+require("config.utils").maybe_import_custom_config("options")

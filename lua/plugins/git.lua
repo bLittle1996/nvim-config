@@ -4,7 +4,6 @@ return {
         lazy = true,
         cmd = { "Git", "G" },
         keys = {
-            { "<leader>gs", "<cmd>G status<cr>", desc = "git status" },
             { "<leader>gg", "<cmd>Git<cr>", desc = "git window" },
         },
     },

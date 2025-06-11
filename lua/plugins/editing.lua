@@ -1,9 +1,67 @@
 return {
     -- See repo for keybinds (gc{motion}, gcc)
-    { "tpope/vim-commentary", lazy = true, cmd = { "Commentary" }, event = "VeryLazy" },
+    {
+        "tpope/vim-commentary",
+        lazy = true,
+        cmd = { "Commentary" },
+        event = "VeryLazy",
+    },
     -- See repo for keybinds (cs{cur}{new}, cst<html>, ds{cur}, ys{motion}{new})
     -- cs = change surround, ds = delete surround, ys = you surround
     { "tpope/vim-surround", lazy = true, event = "VeryLazy" },
+    {
+        "hrsh7th/nvim-cmp",
+        lazy = true,
+        event = "VeryLazy",
+        config = function(plugin, opts)
+            print("setting up nvim cmp")
+            local cmp = require("cmp")
+            cmp.setup({
+                snippet = {
+                    expand = function(args)
+                        vim.fn["vsnip#anonymous"](args.body)
+                    end,
+                },
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-u>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<C-e>"] = cmp.mapping.abort(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                }),
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "vsnip" },
+                    { name = "buffer" },
+                }),
+            })
+
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = { { name = "buffer" } },
+            })
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = "path" },
+                    { name = "cmdline" },
+                }),
+                matching = { disallow_symbol_nonprefix_matching = false },
+            })
+        end,
+        dependencies = {
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-cmdline" },
+            { "hrsh7th/cmp-path" },
+            { "hrsh7th/cmp-vsnip" },
+            { "hrsh7th/vim-vsnip" },
+        },
+    },
     {
         "stevearc/conform.nvim",
         lazy = true,

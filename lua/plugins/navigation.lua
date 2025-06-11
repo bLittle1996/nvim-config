@@ -8,7 +8,9 @@ return {
             {
                 "<C-e>",
                 function()
-                    require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+                    require("harpoon").ui:toggle_quick_menu(
+                        require("harpoon"):list()
+                    )
                 end,
                 desc = "Harpoon: open pinned files",
             },
@@ -72,7 +74,7 @@ return {
         keys = {
             {
                 "<leader>fe",
-                "<cmd>NvimTreeFindFile<cr>",
+                "<cmd>NvimTreeFindFileToggle<cr>",
                 desc = "File Explorer",
             },
         },
@@ -87,6 +89,13 @@ return {
             picker = { enabled = true },
         },
         keys = {
+            {
+                "<leader>ho",
+                function()
+                    Snacks.dashboard.open()
+                end,
+                desc = "Open Home Screen",
+            },
             {
                 "<leader>ff",
                 function()

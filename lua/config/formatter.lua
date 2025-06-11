@@ -11,8 +11,9 @@ end
 add_formatter("lua", { "stylua" })
 add_formatter("go", { "gofmt" })
 
-local js_formatters = { "prettier" }
-local js_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
-for _, ft in ipairs(js_filetypes) do
-    add_formatter(ft, js_formatters)
+local prettier_fts = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "css", "scss" }
+for _, ft in ipairs(prettier_fts) do
+    add_formatter(ft, { "prettier" })
 end
+
+require("config.utils").maybe_import_custom_config("formatter")

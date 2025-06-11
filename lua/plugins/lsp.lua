@@ -7,6 +7,7 @@ return {
         config = function(plugin, opts)
             require("mason").setup({})
             require("mason-lspconfig").setup({})
+            require("config.lsp")
         end,
         dependencies = {
             { "mason-org/mason.nvim", tag = "v2.0.0" },

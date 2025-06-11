@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.keymap.set("n", "<leader>bd", ":bd<CR>") -- close current buffer
+
 -- LSP default keymaps:
 -- https://neovim.io/doc/user/lsp.html#lsp-defaults
 -- MODE | KEYMAPS | FUNCTION
@@ -18,3 +20,5 @@ end, { desc = "Enable diagnostic text" })
 vim.keymap.set("n", "<leader>ed", function()
     vim.diagnostic.config({ virtual_text = false })
 end, { desc = "Disable diagnostic text" })
+
+require("config.utils").maybe_import_custom_config("keymaps")
