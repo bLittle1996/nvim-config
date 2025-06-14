@@ -12,6 +12,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", function()
             vim.lsp.buf.definition()
         end, { buffer = true })
+        -- open error msg under cursor
+        vim.keymap.set("n", "<leader>ef", function()
+            local opts = require("cmp").config.window.bordered()
+            vim.diagnostic.open_float(opts)
+        end, { buffer = true })
     end,
 })
 
