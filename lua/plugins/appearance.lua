@@ -21,7 +21,12 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch", "diff", "diagnostics" },
                 lualine_c = { "filename" },
-                lualine_x = { "searchcount", "encoding", { "fileformat", icons_enabled = false }, "filetype" },
+                lualine_x = {
+                    "searchcount",
+                    "encoding",
+                    { "fileformat", icons_enabled = false },
+                    "filetype",
+                },
                 lualine_y = { "lsp_status" },
                 lualine_z = { "location" },
             },
@@ -37,7 +42,10 @@ return {
                 color_icons = true,
                 get_element_icon = function(element)
                     local icon, hl =
-                        require("nvim-web-devicons").get_icon_by_filetype(element.filetype, { default = false })
+                        require("nvim-web-devicons").get_icon_by_filetype(
+                            element.filetype,
+                            { default = false }
+                        )
                     return icon, hl
                 end,
                 offsets = {
@@ -61,11 +69,40 @@ return {
             notifier = { enabled = true },
             dashboard = {
                 enabled = true,
+                preset = {
+                    header = [[
+
+
+██╗   ██╗██╗███╗   ███╗    ██████╗ ████████╗██╗    ██╗
+██║   ██║██║████╗ ████║    ██╔══██╗╚══██╔══╝██║    ██║
+██║   ██║██║██╔████╔██║    ██████╔╝   ██║   ██║ █╗ ██║
+╚██╗ ██╔╝██║██║╚██╔╝██║    ██╔══██╗   ██║   ██║███╗██║
+ ╚████╔╝ ██║██║ ╚═╝ ██║    ██████╔╝   ██║   ╚███╔███╔╝
+  ╚═══╝  ╚═╝╚═╝     ╚═╝    ╚═════╝    ╚═╝    ╚══╝╚══╝ ]],
+                },
                 sections = {
                     { section = "header" },
-                    { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-                    { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-                    { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+                    {
+                        icon = " ",
+                        title = "Keymaps",
+                        section = "keys",
+                        indent = 2,
+                        padding = 1,
+                    },
+                    {
+                        icon = " ",
+                        title = "Recent Files",
+                        section = "recent_files",
+                        indent = 2,
+                        padding = 1,
+                    },
+                    {
+                        icon = " ",
+                        title = "Projects",
+                        section = "projects",
+                        indent = 2,
+                        padding = 1,
+                    },
                     { section = "startup" },
                 },
             },
