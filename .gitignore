@@ -1,3 +1,4 @@
 Dockerfile
 lazy-lock.json
 lua/config/custom-*.lua
+lua/plugins/custom.lua
